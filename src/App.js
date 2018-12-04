@@ -1,28 +1,29 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import './config/reactotron';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faShoppingCart, faSpinner, faTimes } from '@fortawesome/free-solid-svg-icons';
+import store from './store';
+import GlobalStyle from './styles/global';
+import { Content } from './styles/components';
+import Header from './components/Header';
+import Routes from './routes';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
-}
+library.add([faShoppingCart, faTimes, faSpinner]);
+
+const App = () => (
+  <Provider store={store}>
+    <div className="app">
+      <GlobalStyle />
+      <BrowserRouter>
+        <Content>
+          <Header />
+          <Routes />
+        </Content>
+      </BrowserRouter>
+    </div>
+  </Provider>
+);
 
 export default App;
