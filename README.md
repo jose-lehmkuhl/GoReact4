@@ -4,6 +4,12 @@ Para rodar o programa, é necessario tambem rodar o server.json na porta 3001.
 
 
 
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
